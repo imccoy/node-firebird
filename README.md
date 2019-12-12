@@ -313,6 +313,10 @@ Firebird.attach(options, function(err, db) {
 
     });
 
+    db.on('response-decode-error', function(err) {
+        // we received a message from the server that we couldn't parse
+    });
+
     db.on('transaction', function(isolation) {
         // isolation === Number
     });
